@@ -10,9 +10,6 @@ publishDir              = "public"
     home = ["HTML"]
     page = ["HTML"]
 
-[markup.goldmark.renderer]
-    unsafe = true
-
 [params]
     author        = "shenweiyan"
     description   = "Webstack-Hugo 网址导航 | Hugo 主题 BY Bio IT 爱好者"
