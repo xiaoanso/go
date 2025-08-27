@@ -26,7 +26,7 @@ jobs:
           # 复制 exampleSite 内容到根目录
           cp -R exampleSite/* .
           # 修改 config.toml 中的主题路径
-          sed -i 's|theme = "WebStack-Hugo"|theme = "layouts"|' config.toml
+          # sed -i 's|theme = "WebStack-Hugo"|theme = "layouts"|' config.toml
 
       - name: Build Site
         run: |

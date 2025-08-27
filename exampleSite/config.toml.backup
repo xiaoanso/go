@@ -1,15 +1,12 @@
-baseURL                 = "https://xiaoanplus.github.io/so/"
-languageCode            = "zh-CN"
-title                   = "WebStack-Hugo 网址导航"
-theme                   = "layouts"
-preserveTaxonomyNames   = true
-disablePathToLower      = true
-hasCJKLanguage          = true
-publishDir              = "public"
+baseURL               = "https://bioit.top/"
+languageCode          = "zh-CN"
+title                 = "WebStack-Hugo 网址导航"
+theme                 = "WebStack-Hugo"
+preserveTaxonomyNames = true
+disablePathToLower    = true
+hasCJKLanguage        = true
+publishDir            = "public"				# 站点静态文件保存目录
 
-[outputs]
-    home = ["HTML"]
-    page = ["HTML"]
 
 [params]
     author        = "shenweiyan"
