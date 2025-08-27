@@ -1,7 +1,6 @@
 baseURL                 = "https://xiaoanplus.github.io/so/"
 languageCode            = "zh-CN"
 title                   = "WebStack-Hugo 网址导航"
-theme                   = "layouts"
 preserveTaxonomyNames   = true
 disablePathToLower      = true
 hasCJKLanguage          = true
