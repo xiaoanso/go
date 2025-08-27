@@ -4,7 +4,7 @@ name: Hugo Actions
 on:
   push:
     branches:
-      - main  # 当 main 分析发生 push 时运行
+      - main
 
 jobs:
   deploy:
@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true  # 获取 Hugo 主题
-          fetch-depth: 0    # 获取所有历史记录
+          submodules: false
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -21,12 +21,16 @@ jobs:
           hugo-version: '0.122.0'
           extended: false
 
+      - name: Prepare site
+        run: |
+          # 复制 exampleSite 内容到根目录
+          cp -R exampleSite/* .
+          # 修改 config.toml 中的主题路径
+          sed -i 's|theme = "WebStack-Hugo"|theme = "layouts"|' config.toml
+
       - name: Build Site
         run: |
-          pwd
-          ls
-          cp -R exampleSite/* .
-          hugo --themesDir ../ --baseURL https://xiaoanplus.github.io/so/
+          hugo --baseURL https://xiaoanplus.github.io/so/
 
       - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3
